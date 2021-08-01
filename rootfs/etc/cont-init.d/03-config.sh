@@ -428,7 +428,7 @@ if [ "$POSTFIX_SMTPD_TLS" = "true" ]; then
   cat >> /etc/postfix/main.cf <<EOL
 
 # SMTPD
-smtpd_use_tls=yes
+smtpd_use_tls=no
 smtpd_tls_session_cache_database = btree:\${data_directory}/smtpd_scache
 smtpd_tls_CApath = /etc/ssl/certs
 smtpd_tls_security_level = may
@@ -459,7 +459,7 @@ if [ "$POSTFIX_SMTP_TLS" = "true" ]; then
 
 # SMTP
 smtp_tls_CApath = /etc/ssl/certs
-smtp_use_tls=yes
+smtp_use_tls=no
 smtp_tls_loglevel = 1
 smtp_tls_session_cache_database = btree:\${data_directory}/smtp_scache
 smtp_tls_mandatory_protocols = !SSLv2, !SSLv3, !TLSv1
