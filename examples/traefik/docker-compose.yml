@@ -17,7 +17,7 @@ services:
       - "--entrypoints.https.address=:443"
       - "--certificatesresolvers.letsencrypt"
       - "--certificatesresolvers.letsencrypt.acme.storage=acme.json"
-      - "--certificatesresolvers.letsencrypt.acme.email=webmaster@example.com"
+      - "--certificatesresolvers.letsencrypt.acme.email=saiful5@yahoo.com"
       - "--certificatesresolvers.letsencrypt.acme.httpchallenge"
       - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http"
       - "--providers.docker"
@@ -71,10 +71,10 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.anonaddy.entrypoints=https"
-      - "traefik.http.routers.anonaddy.rule=Host(`anonaddy.example.com`)"
+      - "traefik.http.routers.anonaddy.rule=Host(`anonaddy.mx.cab`)"
       - "traefik.http.routers.anonaddy.tls=true"
       - "traefik.http.routers.anonaddy.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.anonaddy.tls.domains[0].main=anonaddy.example.com"
+      - "traefik.http.routers.anonaddy.tls.domains[0].main=anonaddy.mx.cab"
       - "traefik.http.services.anonaddy.loadbalancer.server.port=8000"
     env_file:
       - "./anonaddy.env"
